@@ -1,0 +1,15 @@
+{% load draw_items %}
+
+<h2>{{menu.title}}</h2>
+<ul class="tree-padding tree-vertical-lines tree-horizontal-lines tree-summaries tree-markers tree-buttons">
+  {% for item in items %}
+  <li>
+    <details>
+      <summary>
+        <a href="{{item.url}}"> {{item.title}} </a>
+      </summary>
+      {% draw_items item.title %}
+    </details>
+  </li>
+  {% endfor %}
+</ul>
